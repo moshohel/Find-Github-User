@@ -6,7 +6,12 @@ import { FiUsers, FiUserPlus } from 'react-icons/fi';
 
 const UserInfo = () => {
   const { githubUser } = React.useContext(GithubContext);
-  const { public_repos, followers, following, public_gists } = githubUser;
+  const {
+    public_repos,
+    followers,
+    following,
+    public_gists,
+  } = githubUser;
 
   const items = [
     {
@@ -64,10 +69,16 @@ const Item = ({ icon, label, value, color }) => {
 
 const Wrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
   gap: 1rem 2rem;
   @media (min-width: 640px) {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(260px, 1fr)
+    );
   }
   .item {
     border-radius: var(--radius);
