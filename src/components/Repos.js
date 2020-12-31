@@ -12,30 +12,31 @@ const Repos = () => {
 	const { repos } = React.useContext(GithubContext);
 	const chartData = [
 		{
-			label: 'Iran',
+			label: 'Html',
 			value: '140',
 		},
 		{
-			label: 'Russia',
+			label: 'CSS',
 			value: '115',
 		},
 		{
-			label: 'UAE',
+			label: 'JavaScrips',
 			value: '100',
 		},
 		{
-			label: 'US',
-			value: '30',
+			label: 'Python',
+			value: '40',
 		},
 		{
-			label: 'China',
+			label: 'Java',
 			value: '30',
 		},
 	];
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
-				<ExampleChart data={chartData} />;
+				{/* <ExampleChart data={chartData} />; */}
+				<Pie3D data={chartData} />;
 			</Wrapper>
 		</section>
 	);
