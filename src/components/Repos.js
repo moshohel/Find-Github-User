@@ -32,10 +32,21 @@ const Repos = () => {
 		}
 		return total;
 	}, {});
-
+	console.log(languages);
 	const mostUsed = Object.values(languages)
 		.sort((a, b) => {
 			return b.value - a.value;
+		})
+		.slice(0, 5);
+
+	const mostPopular = Object.values(languages)
+		.sort((a, b) => {
+			return b.stars - a.stars;
+		})
+		.map((item) => {
+			// Fusion Charts is looking for value property
+			// so assigning stars in property called value
+			return { ...item, value: item.stars };
 		})
 		.slice(0, 5);
 
@@ -68,7 +79,7 @@ const Repos = () => {
 				<div>
 					<p>hushdfiuhs</p>
 				</div>
-				<Doughnut2D data={chartData} />
+				<Doughnut2D data={mostPopular} />
 				<div>dfljldfkj</div>
 			</Wrapper>
 		</section>
