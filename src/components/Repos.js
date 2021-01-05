@@ -75,12 +75,10 @@ const Repos = () => {
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
-				<Pie3D data={mostUsed} />;
-				<div>
-					<p>hushdfiuhs</p>
-				</div>
+				<Pie3D data={mostUsed} />
+				<Column3D data={chartData} />
 				<Doughnut2D data={mostPopular} />
-				<div>dfljldfkj</div>
+				<Bar3D data={chartData} />
 			</Wrapper>
 		</section>
 	);
