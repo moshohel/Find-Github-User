@@ -6,17 +6,26 @@ const Search = () => {
 	// local state
 	const [user, setUser] = React.useState('');
 	// get data from global context
+	const { requests, error } = React.useContext(
+		GithubContext
+	);
+	console.log(error.msg);
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (user) {
 			// setUser('');
 		}
-		console.log(user);
+		// console.log(user);
 	};
 
 	return (
 		<section className='section'>
 			<Wrapper className='section-center'>
+				{error.show && (
+					<ErrorWrapper>
+						<p>{error.msg}</p>
+					</ErrorWrapper>
+				)}
 				<form onSubmit={handleSubmit}>
 					<div className='form-control'>
 						<MdSearch />
@@ -33,7 +42,7 @@ const Search = () => {
 						</button>
 					</div>
 				</form>
-				<h3>request : 60 / 60 </h3>
+				<h3>request : {requests} / 60 </h3>
 			</Wrapper>
 		</section>
 	);
